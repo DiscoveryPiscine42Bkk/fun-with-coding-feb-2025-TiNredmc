@@ -1,5 +1,4 @@
 #!/bin/bash
-arg_idx=0
 
 if [ $# -eq 0 ] # Check if argument is empy (EQual to zero) 
 	then
