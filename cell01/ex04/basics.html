@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basics</title>
+    <style>
+        body {
+            background-color: pink;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            justify-self: center;
+            color: white;
+        }
+
+        .shops {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .shops img {
+            width: 200px;
+            height: auto;
+        }
+
+        .shops>.shop {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .footer {
+            text-align: right;
+            font-style: italic;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <h1>Basics!</h1>
+    </nav>
+    <div class="shops">
+        <div class="shop">
+            <img src="https://static-00.iconduck.com/assets.00/ebay-icon-2048x2048-2vonydav.png"
+                alt="eBay">
+            <a href="https://www.ebay.com/">eBay</a>
+        </div>
+        <div class="shop">
+            <img src="https://cdn-1.webcatalog.io/catalog/taobao/taobao-icon-filled-256.png?v=1714776076645" 
+				alt="Taobao">
+            <a href="https://www.taobao.com/">Taobao</a>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="footer">
+        <span id="copyright">
+            © tjiamjar 2025
+        </span>
+    </div>
+
+</body>
+
+</html>
