@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #ffe499;
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            display: flex;
+            gap: 10px;
+            background: #f7cb52;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input, select, button {
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="calculator">
+        <input type="text" id="leftOperand" placeholder="Left Operand" required>
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="text" id="rightOperand" placeholder="Right Operand" required>
+        <button type="submit">Try me!</button>
+    </form>
+
+    <script>
+        document.getElementById("calculator").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+
+            const leftOperand = document.getElementById("leftOperand").value;
+            const rightOperand = document.getElementById("rightOperand").value;
+            const operator = document.getElementById("operator").value;
+
+            // Convert input values to integers
+            const num1 = parseFloat(leftOperand);
+            const num2 = parseFloat(rightOperand);
+
+            // Validate inputs
+            if (isNaN(num1) || isNaN(num2) || num1 < 0 || num2 < 0 || !Number.isInteger(num1) || !Number.isInteger(num2)) {
+                console.log("Error :(");
+                alert("Error :(");
+                return;
+            }
+
+            // Handle division/modulo by zero
+            if ((operator === "/" || operator === "%") && num2 === 0) {
+                console.log("It's over 9000!");
+                alert("It's over 9000!");
+                return;
+            }
+
+            let result;
+            switch (operator) {
+                case "+": result = num1 + num2; break;
+                case "-": result = num1 - num2; break;
+                case "*": result = num1 * num2; break;
+                case "/": result = num1 / num2; break;
+                case "%": result = num1 % num2; break;
+                default: result = "Invalid operation";
+            }
+
+            console.log(`Result: ${result}`);// print log
+            alert(`Result: ${result}`);
+        });
+
+        // Every 30 seconds, show an alert message
+        setInterval(() => {
+            alert("Please, use me...");
+        }, 30000);
+    </script>
+
+</body>
+</html>
