@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body, html {
+    height: 100%;
+}
+
+/* Parallax Sections */
+.parallax {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.parallax1 {
+    background-image: url('https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/440/capsule_616x353.jpg?t=1729702978'); 
+}
+
+.parallax2 {
+    background-image: url('https://docs.ros.org/en/noetic/api/tf2_ros/html/c++/transform__listener_8h__incl.png'); 
+}
+
+.message {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.content {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 50px;
+    font-size: 1.5em;
+}
