@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balloon clicker</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        box-sizing: border-box;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .balloon {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <div class="balloon" onclick="sizeIncrease()" onmouseleave="sizeDecrease()">
+    </div>
+    <script>
+        let curColor = 0;
+        const colors = ["red", "green", "blue"];
+        const balloon = document.querySelector('.balloon');
+        const sizeIncrease = () => {// Increase size with mouse click
+            const balloonSize = balloon.offsetWidth;
+            balloon.style.width = balloonSize + 10 + 'px';
+            balloon.style.height = balloonSize + 10 + 'px';
+            curColor = (curColor + 1) % colors.length;
+            balloon.style.backgroundColor = colors[curColor];
+
+            if (balloon.offsetWidth > 420) {// Check px threshold to reset back to original size
+                balloon.style.width = '200px';
+                balloon.style.height = '200px';
+            }
+        }
+        const sizeDecrease = () => {// Decrease mouse siez when mouse leave
+            if (balloon.offsetWidth > 200) {// Deadband
+                const ballonSize = balloon.offsetWidth;
+                balloon.style.width = ballonSize - 5 + 'px';
+                balloon.style.height = ballonSize - 5 + 'px';
+            }
+            curColor = (curColor - 1 + colors.length) % colors.length;
+            balloon.style.backgroundColor = colors[curColor];
+        }
+    </script>
+</body>
+
+</html>
